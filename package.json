@@ -1,0 +1,19 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "file manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrynaKolh/file-manager.git"
+  },
+  "author": "Iryna Kolhanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IrynaKolh/file-manager/issues"
+  },
+  "homepage": "https://github.com/IrynaKolh/file-manager#readme"
+}
