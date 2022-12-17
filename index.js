@@ -1,7 +1,12 @@
-import { exitUser, printName } from './src/helpers/welcome.js';
+import { exitUser, printName, printCurrentDir } from './src/helpers/messengers.js';
 import readLine from 'readline';
+import os from 'os';
+import {INVALID_INPUT} from './src/helpers/constants.js'
 
 printName(process.argv);
+
+let currDir = os.homedir();
+printCurrentDir(currDir);
 
 const rl = readLine.createInterface({ input: process.stdin });
 rl.on('line', (data) => {
@@ -12,7 +17,7 @@ rl.on('line', (data) => {
       break;
 
     default:
-      console.log(args);
+      process.write(INVALID_INPUT);
       break;
   }
 });

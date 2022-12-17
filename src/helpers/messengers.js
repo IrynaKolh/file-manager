@@ -9,3 +9,7 @@ export const exitUser = () => {
   process.stdout.write(`\nThank you for using File Manager, ${userName}, goodbye! \n`);
   process.exit();
 };
+
+export const printCurrentDir = (currentDir) => {
+  process.stdout.write(`\nYou are currently in ${currentDir} \n`);
+};
