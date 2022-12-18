@@ -10,6 +10,6 @@ export const exitUser = () => {
   process.exit();
 };
 
-export const printCurrentDir = (currentDir) => {
-  process.stdout.write(`\nYou are currently in ${currentDir} \n`);
+export const printCurrDir = (currDir) => {
+  process.stdout.write(`\nYou are currently in ${currDir} \n`);
 };
