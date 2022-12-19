@@ -86,12 +86,15 @@ List of operations and their syntax:
     ```bash
     mv path_to_file path_to_new_directory
 
-    mv new.md C:\Users\acer\Downloads
+    before this command delete new.md or create your own
+    up
+    mv new.md C:\Users\acer\
     ```
     - Delete file: 
     ```bash
     rm path_to_file
 
+    cd Downloads
     rm new.md
     ```
 - Operating system info (prints following information in console)
@@ -119,15 +122,18 @@ List of operations and their syntax:
     - Calculate hash for file and print it into console  
     ```bash
     hash path_to_file
+
+    add file.txt
+    add some text to file.txt
+    hash file.txt
+    change file.txt and repeat command
     ```
 - Compress and decompress operations  
     - Compress file (using Brotli algorithm, should be done using Streams API)  
     ```bash
     compress path_to_file path_to_destination
 
-    cd desktop
-    add test.txt
-    compress test.txt C:\Users\acer\desktop\zip
+    compress file.txt C:\Users\acer\desktop\zip
     ```
     - Decompress file (using Brotli algorithm, should be done using Streams API)  
     ```bash

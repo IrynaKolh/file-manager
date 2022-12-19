@@ -66,42 +66,42 @@ rl.on('line', async (data) => {
 
     case 'cat':
       const [pathToFile] = args;
-      readFile(currDir, pathToFile);
+      await readFile(currDir, pathToFile);
       printCurrDir(currDir);
       break;
   
     case 'add':
       const [fileName] = args;
-      addFile(currDir, fileName);
+      await addFile(currDir, fileName);
       console.log('File is created.')
       printCurrDir(currDir);
       break;
 
     case 'rn':
       const [oldFile, newFile] = args;
-      renameFile(currDir, oldFile, newFile);
+      await renameFile(currDir, oldFile, newFile);
       console.log('FileName is changed');
       printCurrDir(currDir);
       break;
 
     case 'cp':
       const [file, folder] = args;
-      copyFile(currDir, file, folder);
+      await copyFile(currDir, file, folder);
       console.log('File is copied.')
       printCurrDir(currDir);
       break;
   
     case 'rm':
       const [fileRemove] = args;
-      removeFile(currDir, fileRemove);
+      await removeFile(currDir, fileRemove);
       console.log('File is deleted.');
       printCurrDir(currDir);
       break;
 
     case 'mv':
       const [sourseToFile, pathToNewDirectory] = args;
-      copyFile(currDir, sourseToFile, pathToNewDirectory);
-      removeFile(currDir, sourseToFile);
+      await copyFile(currDir, sourseToFile, pathToNewDirectory);
+      await removeFile(currDir, sourseToFile);
       console.log('File is moved.')
       printCurrDir(currDir);
       break;  
