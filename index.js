@@ -15,6 +15,11 @@ import { addFile } from './src/fs/add.js';
 import { renameFile } from './src/fs/rn.js';
 import { copyFile } from './src/fs/copy.js';
 import { removeFile } from './src/fs/rm.js';
+import { getEOL } from './src/os/eol.js';
+import { getCPUs } from './src/os/cpus.js';
+import { getHomedir } from './src/os/homedir.js';
+import { getUserName } from './src/os/username.js';
+import { getArch } from './src/os/arch.js';
 
 printName(process.argv);
 
@@ -97,6 +102,35 @@ rl.on('line', async (data) => {
       console.log('File is moved.')
       printCurrDir(currDir);
       break;  
+
+    case 'os':
+      const [command] = args;
+      switch (command) {
+        case '--EOL':
+          getEOL();
+          break;
+
+        case '--cpus':
+          getCPUs();        
+          break;
+  
+        case '--homedir':
+          getHomedir();
+          break;
+
+        case '--username':
+          getUserName();
+          break;
+
+        case '--architecture':
+          getArch();
+          break;
+
+        default:
+          stdout.write(INVALID_INPUT);
+          break;
+      }
+      break;
 
     default:
       process.stdout.write(INVALID_INPUT);
