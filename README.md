@@ -21,6 +21,8 @@ The file manager should be able to do the following:
 - The program is started by npm-script `start` in following way:
 ```bash
 npm run start -- --username=your_username
+
+npm run start -- --username=Ira
 ```
 - After starting the program displays the following text in the console (`Username` is equal to value that was passed on application start in `--username` CLI argument)  
 `Welcome to the File Manager, Username!`  
@@ -43,6 +45,8 @@ List of operations and their syntax:
     - Go to dedicated folder from current directory (`path_to_directory` can be relative or absolute)
     ```bash
     cd path_to_directory
+
+    cd Desktop
     ```
     - Print in console list of all files and folders in current directory. List should contain:
         - list should contain files and folder names (for files - with extension)
@@ -57,26 +61,38 @@ List of operations and their syntax:
     - Read file and print it's content in console (should be done using Readable stream): 
     ```bash
     cat path_to_file
+
+    cat file.txt
     ```
     - Create empty file in current working directory: 
     ```bash
     add new_file_name
+
+    add file.txt
     ```
     - Rename file (content should remain unchanged): 
     ```bash
     rn path_to_file new_filename
+
+    rn file.txt new.md
     ```
     - Copy file (should be done using Readable and Writable streams): 
     ```bash
     cp path_to_file path_to_new_directory
+
+    cp new.md C:\Users\acer\
     ```
     - Move file (same as copy but initial file is deleted, copying part should be done using Readable and Writable streams): 
     ```bash
     mv path_to_file path_to_new_directory
+
+    mv new.md C:\Users\acer\Downloads
     ```
     - Delete file: 
     ```bash
     rm path_to_file
+
+    rm new.md
     ```
 - Operating system info (prints following information in console)
     - Get EOL (default system End-Of-Line) and print it to console  
