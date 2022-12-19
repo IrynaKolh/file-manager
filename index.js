@@ -47,7 +47,8 @@ rl.on('line', async (data) => {
 
     case 'ls':
       const list = await getList(currDir);
-      console.log(list);
+      console.table(list);
+     
       break;
     
     default:
