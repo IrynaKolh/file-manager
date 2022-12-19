@@ -20,6 +20,7 @@ import { getCPUs } from './src/os/cpus.js';
 import { getHomedir } from './src/os/homedir.js';
 import { getUserName } from './src/os/username.js';
 import { getArch } from './src/os/arch.js';
+import { calculateHash } from './src/hash/hash.js'; 
 
 printName(process.argv);
 
@@ -130,6 +131,11 @@ rl.on('line', async (data) => {
           stdout.write(INVALID_INPUT);
           break;
       }
+      break;
+
+      case 'hash':
+        const [hashPath] = args;
+        calculateHash(currDir, hashPath);
       break;
 
     default:
