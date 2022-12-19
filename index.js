@@ -21,6 +21,8 @@ import { getHomedir } from './src/os/homedir.js';
 import { getUserName } from './src/os/username.js';
 import { getArch } from './src/os/arch.js';
 import { calculateHash } from './src/hash/hash.js'; 
+import { compress } from './src/zip/compress.js';
+import { decompress } from './src/zip/decompress.js';
 
 printName(process.argv);
 
@@ -133,9 +135,19 @@ rl.on('line', async (data) => {
       }
       break;
 
-      case 'hash':
-        const [hashPath] = args;
-        calculateHash(currDir, hashPath);
+    case 'hash':
+      const [hashPath] = args;
+      calculateHash(currDir, hashPath);
+    break;
+
+    case 'compress':
+      const [fileCompress, destinationCompress] = args;
+      compress(currDir, fileCompress, destinationCompress);
+      break;
+
+    case 'decompress':
+      const [fileDecompress, destinationDecompress] = args;
+      decompress(currDir, fileDecompress, destinationDecompress);
       break;
 
     default:

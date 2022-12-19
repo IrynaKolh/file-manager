@@ -124,9 +124,15 @@ List of operations and their syntax:
     - Compress file (using Brotli algorithm, should be done using Streams API)  
     ```bash
     compress path_to_file path_to_destination
+
+    cd desktop
+    add test.txt
+    compress test.txt C:\Users\acer\desktop\zip
     ```
     - Decompress file (using Brotli algorithm, should be done using Streams API)  
     ```bash
     decompress path_to_file path_to_destination
+
+    decompress zip unzip.txt
     ```  
     NB! After decompressing of previously compressed file result should not differ with originally compressed file

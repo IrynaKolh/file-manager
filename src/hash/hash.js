@@ -1,5 +1,4 @@
 import crypto from 'crypto';
-import fs from 'fs/promises';
 import { createReadStream } from 'fs';
 import path from 'path';
 
